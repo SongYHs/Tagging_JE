@@ -7,8 +7,11 @@
  3.使用nltk需要下载()
 ## 环境要求
   python=2.7
+  
   tensorflow>=1.14
+  
   keras=2.3.1
+  
   nltk=3.4
 ## 运行
  source run.sh  #运行环境已被命名为py27
