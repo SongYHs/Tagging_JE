@@ -98,7 +98,7 @@ def test_model1(nn_model, testdata, index2word, sent_i2w, resultfile='', rfile='
             # if next_index != 0:
             next_token = index2word[next_index]
             ptagi.append(next_token)
-            if not (ii+1) % (max_s-2):
+            if not (ii+1) % (max_s-fl):
                 ptag.extend(ptagi+["O"])
                 ptagi=["O"]
         #ptag.extend(ptagi + ["O"])
@@ -291,7 +291,7 @@ def get_e2edatafile(emb,trainfile,testfile,labelfile,w2vfile):
 
 kks = 1 if args.modelname=='Zheng' else 2 ##################
 max_tokens = 50
-
+fl=2 if args.emb=='bert' else 0
 beta = 10
 if __name__ == "__main__":
     e2edatafile = args.e
