@@ -257,14 +257,14 @@ def train_e2e_model(eelstmfile, modelfile, resultdir, npochos,emb='word',
     h = nn_model.fit_generator(f, steps_per_epoch=len(ind_train) // batch_size, epochs=npochos, verbose=1, \
                                validation_data=f_val, validation_steps=len(ind_val) // batch_size,
                                callbacks=[early_stopping,  EVA])
-    print('  test')
-    prf = test_model1(nn_model, testdata, target_idex_word, sourc_idex_word,
-                      resultdir + 'result_test.pkl',
-                      kks=kks)  # ,rfile=resultdir+"json_result"+str(saveepoch)+'.json')
-    print('f1: %.4f, precision: %.4f, recall: %.4f\n' % (prf[2], prf[1], prf[0]))
-    print(h.history['loss'], maxi)
-    prf = []
-    return prf
+#     print('  test')
+#     prf = test_model1(nn_model, testdata, target_idex_word, sourc_idex_word,
+#                       resultdir + 'result_test.pkl',
+#                       kks=kks)  # ,rfile=resultdir+"json_result"+str(saveepoch)+'.json')
+#     print('f1: %.4f, precision: %.4f, recall: %.4f\n' % (prf[2], prf[1], prf[0]))
+#     print(h.history['loss'], maxi)
+#     prf = []
+    return h
 
 def get_e2edatafile(emb,trainfile,testfile,labelfile,w2vfile):
 
